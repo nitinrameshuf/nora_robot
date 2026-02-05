@@ -1,0 +1,43 @@
+# Copyright 2026 nanostation
+# Licensed under the Apache License, Version 2.0
+
+# Speech-to-text transcription service
+# Converts audio data to text using Whisper
+
+# Audio data (WAV format, 16kHz mono recommended)
+uint8[] audio_data
+
+# Audio duration (seconds, for validation)
+float32 duration
+
+# Language hint (e.g., "en", "es", "" = auto-detect)
+string language
+
+# Model preference (tiny, base, small, medium)
+string model_size
+
+# Priority (0 = normal, 1 = high)
+uint8 priority
+
+---
+
+# Transcribed text
+string text
+
+# Confidence score (0.0 to 1.0)
+float32 confidence
+
+# Language detected (ISO code)
+string detected_language
+
+# Processing time (seconds)
+float32 processing_time
+
+# Success flag
+bool success
+
+# Error message (empty if success=true)
+string error_message
+
+# Model used (for logging)
+string model_used
